@@ -1,25 +1,21 @@
--- 1. Retrieve the checkNumber, paymentDate, and amount from the payments table
-SELECT checkNumber, paymentDate, amount
-FROM payments;
 
--- 2. Retrieve orderDate, requiredDate, and status of orders currently 'In Process', sorted by orderDate descending
-SELECT orderDate, requiredDate, status
-FROM orders
-WHERE status = 'In Process'
-ORDER BY orderDate DESC;
+-- Create a table named student with id, fullName, and age
+CREATE TABLE student (
+    id INT PRIMARY KEY,
+    fullName VARCHAR(100),
+    age INT
+);
 
--- 3. Display firstName, lastName, and email of employees whose job title is 'Sales Rep', ordered by employeeNumber descending
-SELECT firstName, lastName, email
-FROM employees
-WHERE jobTitle = 'Sales Rep'
-ORDER BY employeeNumber DESC;
+-- Question 2
+-- Insert at least 3 records into the student table
+INSERT INTO student (id, fullName, age)
+VALUES
+    (1, 'Peter John', 18),
+    (2, 'Jane Sam', 19),
+    (3, 'Michael Benard', 21);
 
--- 4. Retrieve all columns and records from the offices table
-SELECT * 
-FROM offices;
-
--- 5. Fetch productName and quantityInStock from products table, sorted by buyPrice ascending, limit to 5 records
-SELECT productName, quantityInStock
-FROM products
-ORDER BY buyPrice ASC
-LIMIT 5;
+-- Question 3 
+-- Update the age of the student with ID 2 to 20
+UPDATE student
+SET age = 20
+WHERE id = 2;
